@@ -169,6 +169,16 @@ def calc_irr(equity_out, equity_in, years):
 irr = calc_irr(equity_exit_cash, equity_required, hold_period_years)
 
 # ---------- Layout: Metrics + Tables ----------
+
+    st.subheader("### Project Scale")
+    st.write(f"**Buildable SF:** {buildable_sf:,.0f}")
+    st.write(f"**Units (display only):** {units}")
+    st.write(f"**Rent:** ${rent_per_sf_year}/SF/yr")
+    st.write(f"**Exit Cap:** {exit_cap_rate:.2f}%")
+    st.write(f"**Hold Period:** {hold_period_years} years")
+
+st.markdown("---")
+
 col_top_left, col_top_right = st.columns([1.6, 1])
 
 with col_top_left:
@@ -187,14 +197,6 @@ with col_top_left:
         m7.metric("Levered IRR", f"{irr*100:,.1f}%")
     else:
         m7.metric("Levered IRR", "N/A")
-
-with col_top_right:
-    st.markdown("### Project Scale")
-    st.write(f"**Buildable SF:** {buildable_sf:,.0f}")
-    st.write(f"**Units (display only):** {units}")
-    st.write(f"**Rent:** ${rent_per_sf_year}/SF/yr")
-    st.write(f"**Exit Cap:** {exit_cap_rate:.2f}%")
-    st.write(f"**Hold Period:** {hold_period_years} years")
 
 st.markdown("---")
 st.subheader("Mini Pro-Forma (Stabilized Year)")
