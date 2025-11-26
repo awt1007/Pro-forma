@@ -34,7 +34,6 @@ land_cost = st.sidebar.number_input(
     max_value=1_000_000,
     value=500_000,
     step=10_000,
-    format="%.0f",
 )
 hard_cost_per_sf = st.sidebar.slider(
     "Hard Cost per SF ($/SF)",
@@ -175,7 +174,7 @@ col_top_left, col_top_right = st.columns([1.6, 1])
 with col_top_left:
     st.subheader("Deal Snapshot")
 
-    m1, m2, m3, m4 = st.columns(4)
+    m1, m2, m3, m4 = st.columns([2, 2, 2, 2])
     m1.metric("Equity Required", f"${equity_required:,.0f}")
     m2.metric("Total Project Cost", f"${total_project_cost:,.0f}")
     m3.metric("Dev Margin on Cost", f"{dev_margin_on_cost*100:,.1f}%")
