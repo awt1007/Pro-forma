@@ -24,7 +24,7 @@ units = st.sidebar.slider(
     min_value=1,
     max_value=100,
     value=10,
-    step=11,
+    step=1,
 )
 
 st.sidebar.header("Costs & Financing")
