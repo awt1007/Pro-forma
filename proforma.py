@@ -14,26 +14,26 @@ st.caption("Adjust the sliders to see how the deal vibes change in real time.")
 st.sidebar.header("Project Scale")
 buildable_sf = st.sidebar.slider(
     "Buildable SF",
-    min_value=10000,
-    max_value=300000,
-    value=80000,
-    step=5000,
+    min_value=1000,
+    max_value=30000,
+    value=2000,
+    step=100,
 )
 units = st.sidebar.slider(
     "Number of Units (for display)",
-    min_value=10,
-    max_value=500,
-    value=120,
-    step=10,
+    min_value=1,
+    max_value=100,
+    value=10,
+    step=11,
 )
 
 st.sidebar.header("Costs & Financing")
 land_cost = st.sidebar.number_input(
     "Land Cost ($)",
     min_value=0,
-    max_value=50_000_000,
-    value=5_000_000,
-    step=100_000,
+    max_value=1_000_000,
+    value=500_000,
+    step=10_000,
     format="%.0f",
 )
 hard_cost_per_sf = st.sidebar.slider(
