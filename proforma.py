@@ -179,20 +179,17 @@ st.write(f"**Hold Period:** {hold_period_years} years")
 
 st.markdown("---")
 
-col_top_left, col_top_right = st.columns([1.6, 1])
+st.subheader("Deal Snapshot")
 
-with col_top_left:
-    st.subheader("Deal Snapshot")
+m1, m2, m3, m4 = st.columns(4)
+m1.metric("Equity Required", f"${equity_required:,.0f}")
+m2.metric("Total Project Cost", f"${total_project_cost:,.0f}")
+m3.metric("Dev Margin on Cost", f"{dev_margin_on_cost*100:,.1f}%")
+m4.metric("Equity Multiple", f"{equity_multiple:,.2f}x")
 
-    m1, m2, m3, m4 = st.columns([2, 2, 2, 2])
-    m1.metric("Equity Required", f"${equity_required:,.0f}")
-    m2.metric("Total Project Cost", f"${total_project_cost:,.0f}")
-    m3.metric("Dev Margin on Cost", f"{dev_margin_on_cost*100:,.1f}%")
-    m4.metric("Equity Multiple", f"{equity_multiple:,.2f}x")
-
-    m5, m6, m7 = st.columns(3)
-    m5.metric("Stabilized NOI (Year 1)", f"${noi:,.0f}")
-    m6.metric("Stabilized Value", f"${stabilized_value:,.0f}")
+m5, m6, m7 = st.columns(3)
+m5.metric("Stabilized NOI (Year 1)", f"${noi:,.0f}")
+m6.metric("Stabilized Value", f"${stabilized_value:,.0f}")
     if irr is not None:
         m7.metric("Levered IRR", f"{irr*100:,.1f}%")
     else:
