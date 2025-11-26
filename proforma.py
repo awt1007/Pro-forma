@@ -170,12 +170,12 @@ irr = calc_irr(equity_exit_cash, equity_required, hold_period_years)
 
 # ---------- Layout: Metrics + Tables ----------
 
-    st.subheader("### Project Scale")
-    st.write(f"**Buildable SF:** {buildable_sf:,.0f}")
-    st.write(f"**Units (display only):** {units}")
-    st.write(f"**Rent:** ${rent_per_sf_year}/SF/yr")
-    st.write(f"**Exit Cap:** {exit_cap_rate:.2f}%")
-    st.write(f"**Hold Period:** {hold_period_years} years")
+st.subheader("### Project Scale")
+st.write(f"**Buildable SF:** {buildable_sf:,.0f}")
+st.write(f"**Units (display only):** {units}")
+st.write(f"**Rent:** ${rent_per_sf_year}/SF/yr")
+st.write(f"**Exit Cap:** {exit_cap_rate:.2f}%")
+st.write(f"**Hold Period:** {hold_period_years} years")
 
 st.markdown("---")
 
