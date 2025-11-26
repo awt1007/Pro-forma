@@ -190,10 +190,10 @@ m4.metric("Equity Multiple", f"{equity_multiple:,.2f}x")
 m5, m6, m7 = st.columns(3)
 m5.metric("Stabilized NOI (Year 1)", f"${noi:,.0f}")
 m6.metric("Stabilized Value", f"${stabilized_value:,.0f}")
-    if irr is not None:
-        m7.metric("Levered IRR", f"{irr*100:,.1f}%")
-    else:
-        m7.metric("Levered IRR", "N/A")
+if irr is not None:
+    m7.metric("Levered IRR", f"{irr*100:,.1f}%")
+else:
+    m7.metric("Levered IRR", "N/A")
 
 st.markdown("---")
 st.subheader("Mini Pro-Forma (Stabilized Year)")
